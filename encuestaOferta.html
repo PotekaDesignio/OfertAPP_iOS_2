@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <style>
+        ui-popup-screen.in, .ui-popup-screen
+        {
+            background-color: #ffffff !important;
+            opacity: 0.5 !important;
+        }
+        
+        .hidden
+        {
+            display: none;
+        }
+        
+        .wrap
+        {
+            white-space: normal !important;
+        }
+    </style>
+    <link href="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.css" rel="stylesheet" />
+    <link href="jQuery/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <title>OfertAPP</title>
+</head>
+<body>
+    <div data-role="page" id="Div1" style="background: url(images/backgrounds/fondo_app.png) no-repeat center;">
+        <div data-role="header" style="background-color: transparent !important; margin-top: 20px;
+            border: 0px solid transparent">
+            <center>
+                ¡Bienvenido a OfertAPP!. Aquí encontrarás todas las herramientas que te brinda la
+                        Aplicación.
+            </center>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true" id="Ul1" class="ui-nodisc-icon ui-alt-icon"
+                style="background-color: transparent !important">
+                <li data-role="list-divider" />
+                <li data-icon="false"><a href="registro.html" data-transition="none">
+                    <img src="images/buttons/p_hoja-12.png" style="width: 20%; margin: 5%" />
+                    <h2 class="wrap">
+                        MIS OFERTAS DISPONIBLES</h2>
+                    <p>
+                        Encuentra ofertas disponibles
+                    </p>
+                </a></li>
+                <li data-icon="false" id="Li1"><a href="login.html" data-transition="none">
+                    <img src="images/buttons/p_peticion-12.png" style="width: 20%; margin: 5%" />
+                    <h2 class="wrap">
+                        ENCUESTA DE OFERTA</h2>
+                    <p>
+                        Participa en la Encuesta
+                    </p>
+                </a></li>
+                <li data-icon="false"><a href="#ListaEdu" data-transition="none" id="btnMOR">
+                    <img src="images/buttons/p_mor-12.png" style="width: 20%; margin: 5%" />
+                    <h2 class="wrap">
+                        MANUAL DE OFERTAS Y RUTAS</h2>
+                    <p>
+                        Actualziado 26 de junio de 2014</p>
+                </a></li>
+                <li data-role="list-divider" />
+                <li data-icon="false"><a href="#ListaEdu" data-transition="none" id="A1">
+                    <img src="images/buttons/p_cerrar-12.png" style="width: 20%; margin: 5%" />
+                    <h2 class="wrap">
+                        CERRAR SESIÓN</h2>
+                    <p>
+                        Finalizas sesión en este dispositivo.</p>
+                </a></li>
+                <li data-role="list-divider" />
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/DAL/REST_Adapter.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/Utils/jquery.number.js"></script>
+    <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events.js"></script>
+    <script src="jQuery/jquery-2.1.1.min.js"></script>
+    <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+    <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
+</body>
+</html>
