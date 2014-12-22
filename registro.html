@@ -22,6 +22,9 @@
     </style>
     <link href="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.css" rel="stylesheet" />
     <link href="jQuery/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <script src="jQuery/jquery-2.1.1.min.js"></script>
+    <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+    <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
     <title>OfertAPP</title>
 </head>
 <body>
@@ -86,10 +89,11 @@
                 </li>
                 <li data-role="list-divider" />
                 <li data-icon="false" id="btnCrearUsuario">
-                    <img src="images/buttons/p_hoja-12.png" style="width: 20%; margin: 1%" />
+                    <img src="images/buttons/p_hoja-12.png" style="width: 100%; margin: 1%" />
                     <h2>
                         Registrarse</h2>
-                    <p>
+                    <p class="wrap">
+                        ¡Estás a un paso de hacer parte de OfertAPP!
                     </p>
                 </li>
                 <li data-role="list-divider" />
@@ -98,7 +102,7 @@
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
-                    <li id="btnVolver"><a href="#" data-icon="carat-l" data-theme="b" data-transition="none">Atrás</a></li>
+                    <li id="btnVolverRegistro"><a href="#" data-icon="carat-l" data-theme="b" data-transition="none">Atrás</a></li>
                 </ul>
             </div>
         </div>
@@ -110,10 +114,7 @@
     <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="js/Utils/jquery.number.js"></script>
     <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
-    <script type="text/javascript" src="js/UI/UI_Events_Registro.js"></script>
     <script type="text/javascript" src="js/UI/UI_Events.js"></script>
-    <script src="jQuery/jquery-2.1.1.min.js"></script>
-    <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
-    <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events_Registro.js"></script>
 </body>
 </html>

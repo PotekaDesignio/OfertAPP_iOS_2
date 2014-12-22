@@ -8,3 +8,7 @@ $("#btnLogin").click(function () {
 
     IniciarSesion(strCorreo, strPass);
 });
+
+$("#btnRecordarPassLogin").click(function () {
+    window.location = "recordarPass.html";
+});

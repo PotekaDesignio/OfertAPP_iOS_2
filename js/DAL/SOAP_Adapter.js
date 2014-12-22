@@ -220,10 +220,129 @@ function CerrarSesion(strUsuarioID) {
 function processSuccessCerrarSesion(data, status, req) {
     if (status == "success") {
         delete window.localStorage["UsuarioLogged_OfertAPP"];
+        delete window.localStorage["OfertasUsuario_OfertAPP"];
+        delete window.localStorage["OfertasMOR_OfertAPP"];
         window.location = "index.html";
     }
 }
 
 function processErrorCerrarSesion(data, status, req) {
+    alert(req.responseText + " " + status);
+}
+
+function CargarOfertasDisponiblesUsuario(strUsuarioID) {
+    var wsUrl = "http://mssql-2014.cloudapp.net:1213/wsofertapp.asmx?op=DescargarInfoOfertaXML";
+
+    var soapRequest =
+                '<?xml version="1.0" encoding="utf-8"?> \
+                    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" \
+                    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+                      <soap:Body> \
+                        <DescargarInfoOfertaXML xmlns="http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/"> \
+                          <pUsuarioID>' + strUsuarioID + '</pUsuarioID> \
+                        </DescargarInfoOfertaXML> \
+                      </soap:Body> \
+                    </soap:Envelope>';
+
+    $.ajax({
+        type: "POST",
+        url: wsUrl,
+        contentType: "text/xml; charset=utf-8",
+        headers: {
+            SOAPAction: 'http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/DescargarInfoOfertaXML'
+        },
+        dataType: "xml",
+        data: soapRequest,
+        success: processSuccessCargarOfertasDisponiblesUsuario,
+        error: processErrorprocessCargarOfertasDisponiblesUsuario
+    });
+}
+
+function processSuccessCargarOfertasDisponiblesUsuario(data, status, req) {
+    if (status == "success") {
+        localStorage.setItem('OfertasUsuario_OfertAPP', req.responseText);
+    }
+}
+
+function processErrorprocessCargarOfertasDisponiblesUsuario(data, status, req) {
+    alert(req.responseText + " " + status);
+}
+
+function CargarDimensionesDisponibles() {
+    var wsUrl = "http://mssql-2014.cloudapp.net:1213/wsofertapp.asmx?op=DescargarInfoDimensionXML";
+
+    var soapRequest =
+                '<?xml version="1.0" encoding="utf-8"?> \
+                    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" \
+                    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+                    <soap:Body> \
+                        <DescargarInfoDimensionXML xmlns="http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/" /> \
+                    </soap:Body> \
+                </soap:Envelope>';
+
+    $.ajax({
+        type: "POST",
+        url: wsUrl,
+        contentType: "text/xml; charset=utf-8",
+        headers: {
+            SOAPAction: 'http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/DescargarInfoDimensionXML'
+        },
+        dataType: "xml",
+        data: soapRequest,
+        success: processSuccessCargarDimensionesDisponibles,
+        error: processErrorCargarDimensionesDisponibles
+    });
+}
+
+function processSuccessCargarDimensionesDisponibles(data, status, req) {
+    if (status == "success") {
+        localStorage.setItem('Dimensiones_OfertAPP', req.responseText);
+        CargarDimensiones();
+    }
+}
+
+function processErrorCargarDimensionesDisponibles(data, status, req) {
+    alert(req.responseText + " " + status);
+}
+
+
+function RecordarPassword(strCorreo) {
+    var wsUrl = "http://mssql-2014.cloudapp.net:1213/wsofertapp.asmx?op=RecordarContraseñaUsuario";
+
+    var soapRequest =
+                '<?xml version="1.0" encoding="utf-8"?> \
+                    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" \
+                    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+                      <soap:Body> \
+                        <RecordarContraseñaUsuario xmlns="http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/"> \
+                          <pCorreoElectronico>' + strCorreo + '</pCorreoElectronico> \
+                        </RecordarContraseñaUsuario> \
+                      </soap:Body> \
+                    </soap:Envelope>';
+
+    $.ajax({
+        type: "POST",
+        url: wsUrl,
+        contentType: "text/xml; charset=utf-8",
+        headers: {
+            SOAPAction: 'http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/RecordarContraseñaUsuario'
+        },
+        dataType: "xml",
+        data: soapRequest,
+        success: processSuccessRecordarPassword,
+        error: processErrorRecordarPassword
+    });
+}
+
+function processSuccessRecordarPassword(data, status, req) {
+    if (status == "success") {
+        window.location = "index.html";
+    }
+}
+
+function processErrorRecordarPassword(data, status, req) {
     alert(req.responseText + " " + status);
 }

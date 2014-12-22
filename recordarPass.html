@@ -28,63 +28,64 @@
     <title>OfertAPP</title>
 </head>
 <body>
-    <div data-role="page" id="Div1" style="background: url(images/backgrounds/fondo_app.png) no-repeat center;">
+    <div data-role="page" id="inicio" style="background: url(images/backgrounds/fondo_app.png) no-repeat center;">
         <div data-role="header" style="background-color: transparent !important; margin-top: 20px;
             border: 0px solid transparent">
-            <left>
-                <p style="margin-left:2%">  
-                    ¡Bienvenido a OfertAPP! Aquí encontrarás todas las herramientas que te brinda la Aplicación.
-                </p>
-            </left>
+            <center>
+                Ingresa el correo que registraste en OfertAPP
+            </center>
         </div>
         <div data-role="content">
-            <ul data-role="listview" data-inset="true" id="ulMOR" class="ui-nodisc-icon ui-alt-icon"
+            <ul data-role="listview" data-inset="true" id="seccionContent" class="ui-nodisc-icon ui-alt-icon"
                 style="background-color: transparent !important">
                 <li data-role="list-divider" />
-                <li data-icon="false" id="btnOfertasDisponibles">
-                    <img src="images/buttons/p_ofertas-12.png" style="width: 100%; margin: 1%" />
-                    <h2 class="wrap">
-                        MIS OFERTAS DISPONIBLES</h2>
+                <li data-icon="false">
+                    <!--<img src="images/buttons/p_hoja-12.png" />-->
+                    <h2>
+                        Correo Electronico:
+                    </h2>
                     <p>
-                        Encuentra ofertas disponibles
+                        <input type="text" id="txtCorreo" value="">
                     </p>
-                </li>
-                <li data-icon="false" id="btnEncuestaOferta">
-                    <img src="images/buttons/p_peticion-12.png" style="width: 100%; margin: 1%" />
-                    <h2 class="wrap">
-                        ENCUESTA DE OFERTA</h2>
-                    <p>
-                        Participa en la Encuesta
-                    </p>
-                </li>
-                <li data-icon="false" id="btnMOR">
-                    <img src="images/buttons/p_mor-12.png" style="width: 100%; margin: 1%" />
-                    <h2 class="wrap">
-                        MANUAL DE OFERTAS Y RUTAS</h2>
-                    <p>
-                        Actualziado 26 de junio de 2014</p>
                 </li>
                 <li data-role="list-divider" />
-                <li data-icon="false" id="btnCerrarSesionHome">
-                    <img src="images/buttons/p_cerrar-12.png" style="width: 100%; margin: 1%" />
-                    <h2 class="wrap">
-                        CERRAR SESIÓN</h2>
+                <li data-icon="false">
+                    <!--<img src="images/buttons/p_iniciar-12.png" />-->
+                    <h2 style="text-align: center !important; font-size: small !important" class="wrap">
+                        OfertAPP te enviará un mensaje donde encontrarás información importante acerca de
+                        tu cuenta</h2>
                     <p>
-                        Finalizas sesión en este dispositivo.</p>
+                        <!--<input type="text" name="txtpPassword" value="Mickey">-->
+                    </p>
+                </li>
+                <li data-role="list-divider" />
+                <li data-icon="false" id="btnRecordarPassword">
+                    <img src="images/buttons/password.png" style="width: 100%; margin: 1%" />
+                    <h2>
+                        ¡Refresca mi memoria!</h2>
+                    <p>
+                    </p>
                 </li>
                 <li data-role="list-divider" />
             </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li id="btnVolverLogin"><a href="#" data-icon="carat-l" data-theme="b" data-transition="none">
+                        Atrás</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.js"></script>
     <script type="text/javascript" src="js/jquery-1.4.1.js"></script>
     <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
-    <script type="text/javascript" src="js/DAL/REST_Adapter.js"></script>
     <script type="text/javascript" src="js/DAL/SOAP_Adapter.js"></script>
     <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="js/Utils/jquery.number.js"></script>
     <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events_RecordarPass.js"></script>
     <script type="text/javascript" src="js/UI/UI_Events.js"></script>
-    <script type="text/javascript" src="js/UI/UI_Events_Home.js"></script>
 </body>
 </html>

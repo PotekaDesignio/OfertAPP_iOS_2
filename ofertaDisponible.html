@@ -22,6 +22,9 @@
     </style>
     <link href="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.css" rel="stylesheet" />
     <link href="jQuery/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <script src="jQuery/jquery-2.1.1.min.js"></script>
+    <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+    <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
     <title>OfertAPP</title>
 </head>
 <body>
@@ -30,19 +33,17 @@
             border: 0px solid transparent">
             <left>
                 <p style="margin-left:2%">  
-                   Aquí encontrarás un listado con la información disponible en el Manual de Ofertas y Rutas. Sólo se mostrarán las dimensiones con información.
-
-                   Hola pichurrias, inicié sesión.... Y QUE, GONORREAS!!!!!!
-
+                   Aquí encontrarás un listado de las Ofertas disponibles para tu Municipio. Sólo se mostrarán las dimensiones con oferta vigente.
                 </p>
             </left>
         </div>
-        <div id="ListaContenidoMOR" data-role="content">
+        <div id="ListaContenidoOfertasUsuario" data-role="content">
         </div>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
-                    <li><a href="home.html" data-icon="carat-l" data-theme="b" data-transition="none">Atrás</a></li>
+                    <li id="btnVolver"><a href="#" data-icon="carat-l" data-theme="b" data-transition="none">
+                        Atrás</a></li>
                 </ul>
             </div>
         </div>
@@ -54,15 +55,10 @@
     <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="js/Utils/jquery.number.js"></script>
     <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events.js"></script>
     <script type="text/javascript" src="js/UI/UI_Events_OfertaDisponible.js"></script>
     <script src="jQuery/jquery-2.1.1.min.js"></script>
     <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
     <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        function codeAddress() {
-            alert('ok');
-        }
-        window.onload = codeAddress;
-        </script>
 </body>
 </html>
