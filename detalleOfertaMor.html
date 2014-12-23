@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <style>
+        ui-popup-screen.in, .ui-popup-screen
+        {
+            background-color: #ffffff !important;
+            opacity: 0.5 !important;
+        }
+        
+        .hidden
+        {
+            display: none;
+        }
+        
+        .wrap
+        {
+            white-space: normal !important;
+        }
+    </style>
+    <link href="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.css" rel="stylesheet" />
+    <link href="jQuery/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <script src="jQuery/jquery-2.1.1.min.js"></script>
+    <script src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+    <script src="jQuery/jquery-ui/jquery-ui.min.js"></script>
+    <title>OfertAPP</title>
+</head>
+<body>
+    <div data-role="page" id="Div1" style="background: url(images/backgrounds/fondo_app.png) no-repeat center;">
+        <div data-role="header" style="background-color: transparent !important; margin-top: 20px;
+            border: 0px solid transparent">
+            <left>
+                <p style="margin-left:2%">  
+                   Aquí encontrarás un listado con la información disponible en el Manual de Ofertas y Rutas. Sólo se mostrarán las dimensiones con información.
+                </p>
+            </left>
+        </div>
+        <div id="ListaContenidoMOR" data-role="content">
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li id="btnVolverDetalleMOR"><a href="#" data-icon="carat-l" data-theme="b" data-transition="none">
+                        Atrás</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tmpAlgo"></div>
+
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/DAL/REST_Adapter.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/Utils/jquery.number.js"></script>
+    <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events.js"></script>
+    <script type="text/javascript" src="js/UI/UI_Events_DetalleOfertaMOR.js"></script>
+    <script type="text/javascript" src="jQuery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="jQuery/jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+    <script type="text/javascript" src="jQuery/jquery-ui/jquery-ui.min.js"></script>
+</body>
+</html>

@@ -43,7 +43,7 @@ function processSuccessDepartamentos(data, status, req) {
 }
 
 function processErrorDepartamentos(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function ObtenerMunicipios(dep_CodigoDepartamentoDANE) {
@@ -92,7 +92,7 @@ function processSuccessMunicipios(data, status, req) {
 }
 
 function processErrorMunicipios(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function CrearUsuario(strNombreUsuario, strApellidosUsuario, strCorreoElectronico, strPassword, strCodigoDepto, strCodigoMun) {
@@ -135,12 +135,14 @@ function CrearUsuario(strNombreUsuario, strApellidosUsuario, strCorreoElectronic
 function processSuccessCrearUsuario(data, status, req) {
     if (status == "success") {
         localStorage.setItem('UsuarioLogged_OfertAPP', req.responseText);
+        alert("Te has registrado correctamente. ¡Bienvenido a OfertAPP!");
+
         window.location = "home.html";
     }
 }
 
 function processErrorCrearUsuario(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function IniciarSesion(strCorreoElectronico, strPassword) {
@@ -179,12 +181,14 @@ function IniciarSesion(strCorreoElectronico, strPassword) {
 function processSuccessIniciarSesion(data, status, req) {
     if (status == "success") {
         localStorage.setItem('UsuarioLogged_OfertAPP', req.responseText);
+        alert("¡Bienvenido de nuevo a OfertAPP!");
+
         window.location = "home.html";
     }
 }
 
 function processErrorIniciarSesion(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function CerrarSesion(strUsuarioID) {
@@ -222,12 +226,13 @@ function processSuccessCerrarSesion(data, status, req) {
         delete window.localStorage["UsuarioLogged_OfertAPP"];
         delete window.localStorage["OfertasUsuario_OfertAPP"];
         delete window.localStorage["OfertasMOR_OfertAPP"];
+        alert("Has finalizado correctamente tu sesión en OfertAPP. Vuelve pronto");
         window.location = "index.html";
     }
 }
 
 function processErrorCerrarSesion(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function CargarOfertasDisponiblesUsuario(strUsuarioID) {
@@ -266,7 +271,7 @@ function processSuccessCargarOfertasDisponiblesUsuario(data, status, req) {
 }
 
 function processErrorprocessCargarOfertasDisponiblesUsuario(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 function CargarDimensionesDisponibles() {
@@ -304,7 +309,7 @@ function processSuccessCargarDimensionesDisponibles(data, status, req) {
 }
 
 function processErrorCargarDimensionesDisponibles(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }
 
 
@@ -339,10 +344,54 @@ function RecordarPassword(strCorreo) {
 
 function processSuccessRecordarPassword(data, status, req) {
     if (status == "success") {
+        alert("¡Excelente! En breve recibiras noticias de OfertAPP.");
         window.location = "index.html";
     }
 }
 
 function processErrorRecordarPassword(data, status, req) {
-    alert(req.responseText + " " + status);
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
+}
+
+function EncuestaOferta(pUsuarioId, pDimensionId) {
+    var wsUrl = "http://mssql-2014.cloudapp.net:1213/wsofertapp.asmx?op=SolicitarOfertaPrioritaria";
+
+    var soapRequest =
+                '<?xml version="1.0" encoding="utf-8"?> \
+                    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" \
+                    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+                      <soap:Body> \
+                        <SolicitarOfertaPrioritaria xmlns="http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/"> \
+                          <pUsuarioId>' + pUsuarioId + '</pUsuarioId> \
+                          <pDimensionId>' + pDimensionId + '</pDimensionId> \
+                        </SolicitarOfertaPrioritaria> \
+                      </soap:Body> \
+                    </soap:Envelope>';
+
+    $.ajax({
+        type: "POST",
+        url: wsUrl,
+        contentType: "text/xml; charset=utf-8",
+        headers: {
+            SOAPAction: 'http://mssql-2014.cloudapp.net:1213/wsOfertAPP.asmx/SolicitarOfertaPrioritaria'
+        },
+        dataType: "xml",
+        data: soapRequest,
+        success: processSuccessEncuestaOferta,
+        error: processErrorEncuestaOferta
+    });
+}
+
+function processSuccessEncuestaOferta(data, status, req) {
+    if (status == "success") {
+        console.log("success");
+        alert('¡Excelente! Tu opinion ha sido enviada.'); 
+        window.location = 'home.html';
+    }
+}
+
+function processErrorEncuestaOferta(data, status, req) {
+    console.log("error");
+    alert("Rayos! Se ha presentado un error. Verifica tu conexión a internet y vuelve a intentarlo");
 }

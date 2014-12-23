@@ -43,6 +43,15 @@
         window.location = "home.html";
     });
 
+    $('#btnVolverDetalleOferta').click(function () {
+        window.location = "ofertaDisponible.html";
+    });
+
+    $('#btnVolverDetalleMOR').click(function () {
+        window.location = "ofertaMOR.html";
+    });
+    
+    
 
 
 

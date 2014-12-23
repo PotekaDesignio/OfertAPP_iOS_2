@@ -27,49 +27,82 @@ function CargarOfertasVigentes() {
                 var dim_NombreDimension = $(e).find("dim_NombreDimension").text();
 
                 switch (dim_DimensionId) {
-                    case "1": identificacion++;
-                        if (identificacion == 1)
+                    case "1":
+                        identificacion++;
+                        if (identificacion == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p1_identificacion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "2": ingresos++;
-                        if (ingresos == 1)
+                    case "2":
+                        ingresos++;
+                        if (ingresos == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p2_trabajo-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "3": educacion++;
-                        if (educacion == 1)
+                    case "3":
+                        educacion++;
+                        if (educacion == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p3_educacion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "4": salud++;
-                        if (salud == 1)
+                    case "4":
+                        salud++;
+                        if (salud == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p4_salud-12-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "5": nutricion++;
-                        if (nutricion == 1)
+                    case "5":
+                        nutricion++;
+                        if (nutricion == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p5_nutricion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "6": habitabilidad++;
-                        if (habitabilidad == 1)
+                    case "6":
+                        habitabilidad++;
+                        if (habitabilidad == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p6_habitabilidad-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "7": dinamica++;
-                        if (dinamica == 1)
+                    case "7":
+                        dinamica++;
+                        if (dinamica == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p7_familia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "8": banca++;
-                        if (banca == 1)
+                    case "8":
+                        banca++;
+                        if (banca == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p8_banca-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "9": justicia++;
-                        if (justicia == 1)
+                    case "9":
+                        justicia++;
+                        if (justicia == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p9_justicia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "10": primeraInfancia++;
-                        if (primeraInfancia == 1)
+                    case "10":
+                        primeraInfancia++;
+                        if (primeraInfancia == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p10_infancia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
-                    case "11": comunitario++;
-                        if (comunitario == 1)
+                    case "11":
+                        comunitario++;
+                        if (comunitario == 1) {
                             items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p11_comunitario-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>Hay Información Publicada</p></a></li>";
+                            items = items + "<script> $('#li_" + dim_NombreDimension + "_1').click(function () { localStorage.setItem('dim_DimensionId', " + dim_DimensionId + "); localStorage.setItem('dim_NombreDimension', '" + dim_NombreDimension + "'); window.location = 'detalleOferta.html';  });</script>";
+                        }
                         break;
                 }
             });

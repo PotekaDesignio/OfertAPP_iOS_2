@@ -4,6 +4,27 @@ $(document).ready(function () {
 });
 
 function CargarDimensiones() {
+
+    var usuarioLogged = localStorage.getItem('UsuarioLogged_OfertAPP');
+    var usu_UsuarioID = null;
+
+    if (ofertasUsuario == null) {
+        $(usuarioLogged).find("SP_LOGIN_USUARIO").each(
+            function (i, e) {
+                usu_UsuarioID = $(e).find("usu_UsuarioId").text();
+                return;
+            }
+        );
+        if (usu_UsuarioID == null) {
+            $(usuarioLogged).find("SP_CREACION_USUARIO").each(
+            function (i, e) {
+                usu_UsuarioID = $(e).find("usu_UsuarioId").text();
+                return;
+            }
+        );
+        }
+    }
+
     var ofertasUsuario = localStorage.getItem('Dimensiones_OfertAPP');
 
     var items = "<ul id='eventList_ListaContenidoEncuestaOferta' data-role='listview' data-inset ='true' class'ui-nodisc-icon ui-alt-icon'>";
@@ -26,52 +47,9 @@ function CargarDimensiones() {
                 var dim_DimensionId = $(e).find("dim_DimensionId").text();
                 var dim_NombreDimension = $(e).find("dim_NombreDimension").text();
 
-                switch (dim_DimensionId) {
-                    case "1": identificacion++;
-                        if (identificacion == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p1_identificacion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "2": ingresos++;
-                        if (ingresos == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p2_trabajo-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "3": educacion++;
-                        if (educacion == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p3_educacion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "4": salud++;
-                        if (salud == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p4_salud-12-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "5": nutricion++;
-                        if (nutricion == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p5_nutricion-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "6": habitabilidad++;
-                        if (habitabilidad == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p6_habitabilidad-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "7": dinamica++;
-                        if (dinamica == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p7_familia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "8": banca++;
-                        if (banca == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p8_banca-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "9": justicia++;
-                        if (justicia == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p9_justicia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "10": primeraInfancia++;
-                        if (primeraInfancia == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p10_infancia-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                    case "11": comunitario++;
-                        if (comunitario == 1)
-                            items = items + "<li data-icon='plus' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_NombreDimension + "_1' ><a href='#" + dim_NombreDimension + "_1'  value =" + dim_NombreDimension + " ><img src='images/buttons/p11_comunitario-12.png' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
-                        break;
-                }
+                items = items + "<li data-icon='false' class='ui-nodisc-icon ui-alt-icon' id='li_" + dim_DimensionId + "_1' ><a href='#" + dim_DimensionId + "_1'  value =" + dim_NombreDimension + " ><img src='" + imgSeleccionImagen(dim_DimensionId) + "' style='width: 100%; margin: 1%' /> <h1 class='wrap'>" + dim_NombreDimension.toUpperCase() + "</h1><p>¡Vota por esta Dimensión!</p></a></li>";
+                items = items + "<script> $('#li_" + dim_DimensionId + "_1').click(function () { var answer = confirm('Vas a votar por la dimensión " + dim_NombreDimension.toUpperCase() + ". ¿Confirmas tu selección?'); if (answer){ EncuestaOferta(" + usu_UsuarioID + ", " + dim_DimensionId + "); } });</script>";
+
             });
 
     items = items + "<ul/>";
@@ -81,5 +59,48 @@ function CargarDimensiones() {
     $("#eventList_ListaContenidoEncuestaOferta").listview();
 
 }
+
+
+function imgSeleccionImagen(seccion) {
+
+    switch (seccion) {
+        case "1":
+            img = 'images/buttons/p1_identificacion-12.png';
+            break;
+        case "2":
+            img = 'images/buttons/p2_trabajo-12.png';
+            break;
+        case "3":
+            img = 'images/buttons/p3_educacion-12.png';
+            break;
+        case "4":
+            img = 'images/buttons/p4_salud-12-12.png';
+            break;
+        case "5":
+            img = 'images/buttons/p5_nutricion-12.png';
+            break;
+        case "6":
+            img = 'images/buttons/p6_habitabilidad-12.png';
+            break;
+        case "7":
+            img = 'images/buttons/p7_familia-12.png';
+            break;
+        case "8":
+            img = 'images/buttons/p8_banca-12.png';
+            break;
+        case "9":
+            img = 'images/buttons/p9_justicia-12.png';
+            break;
+        case "10":
+            img = 'images/buttons/p10_infancia-12.png';
+            break;
+        case "11":
+            img = 'images/buttons/p11_comunitario-12.png';
+            break;
+    }
+    return img;
+}
+
+
 
 
